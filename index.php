@@ -47,7 +47,7 @@ $faqs = [
     ],
 ];
 
-/*
+/* met
 foreach ($faqs as $faq => $testo) {
     foreach ($testo as $dati => $paragrafo) {
         if (is_array($paragrafo)) {
@@ -77,10 +77,12 @@ foreach ($faqs as $faq => $testo) {
         <div class="container-faq"> 
             <?php
             foreach ($faqs as $faq => $testo) {
+                ?> <section class="faq"> <?php
                 foreach ($testo as $dati => $paragrafo) {
+                    
                     if (is_array($paragrafo) === false) {
-                    ?> <section class="faq">
-                        <div class="titolo">
+                    
+                        ?> <div class="titolo">
                             <h1><?php echo $testo['Titolo']; ?></h1>
                         </div><?php
                     } else {
@@ -89,10 +91,10 @@ foreach ($faqs as $faq => $testo) {
                             <div class="paragrafo">
                                 <p><?php echo implode($paragrafo) ?></p>
                             </div>
-                        </div><?php
-                    } ?>
-                    </section> <?php
+                        </div> <?php
+                    }
                 }
+                ?> </section> <?php
             }
             ?>
         </div>
