@@ -47,9 +47,12 @@ $faqs = [
 foreach ($faqs as $faq => $testo) {
     foreach ($testo as $dati => $paragrafo) {
         if (is_array($paragrafo)) {
-            echo implode(', ', $paragrafo) . '<br>';
+?> <p><?php echo implode(', ', $paragrafo) . '<br>' ?></p>
+        <?php
         } else {
-            echo $paragrafo . '<br>';
+        ?>
+            <h1><?php echo $testo['Titolo']; ?></h1>
+<?php
         }
     };
 };
