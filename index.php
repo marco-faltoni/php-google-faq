@@ -47,7 +47,7 @@ $faqs = [
     ],
 ];
 
-/* met
+/*
 foreach ($faqs as $faq => $testo) {
     foreach ($testo as $dati => $paragrafo) {
         if (is_array($paragrafo)) {
@@ -74,6 +74,23 @@ foreach ($faqs as $faq => $testo) {
     </head>
 
     <body>
+        <header>
+            <div class="logo">
+                <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_74x24dp.png" alt="">
+            </div>
+            <nav class="nav">
+                <div class="items1">
+                    <p>Introduzione</p>
+                    <p>Norme sulla privacy</p>
+                    <p>Termini di servizio</p>
+                    <p>Tecnologie</p>
+                    <p>Domande Frequenti</p>
+                </div>
+                <div class="items2">
+
+                </div>
+            </nav>
+        </header>
         <div class="container-faq"> 
             <?php
             foreach ($faqs as $faq => $testo) {
@@ -81,7 +98,6 @@ foreach ($faqs as $faq => $testo) {
                 foreach ($testo as $dati => $paragrafo) {
                     
                     if (is_array($paragrafo) === false) {
-                    
                         ?> <div class="titolo">
                             <h1><?php echo $testo['Titolo']; ?></h1>
                         </div><?php
