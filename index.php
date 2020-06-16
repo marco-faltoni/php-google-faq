@@ -1,8 +1,10 @@
-<!-- Create un array per salvare tutte le faq che trovate in questa pagina:
-https://policies.google.com/faq
-Stampate in pagina tutte le domande dinamicamente con un ciclo in php. -->
+
 
 <?php
+
+// Create un array per salvare tutte le faq che trovate in questa pagina:
+// https://policies.google.com/faq
+// Stampate in pagina tutte le domande dinamicamente con un ciclo in php.
 
 $faqs = [
     [
@@ -44,10 +46,12 @@ $faqs = [
         ],
     ],
 ];
+
+/*
 foreach ($faqs as $faq => $testo) {
     foreach ($testo as $dati => $paragrafo) {
         if (is_array($paragrafo)) {
-?> <p><?php echo implode(', ', $paragrafo) . '<br>' ?></p>
+?>          <p><?php echo implode(', ', $paragrafo) . '<br>' ?></p>
         <?php
         } else {
         ?>
@@ -56,25 +60,41 @@ foreach ($faqs as $faq => $testo) {
         }
     };
 };
+*/
 
 ?>
 
-
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Google FAQ</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <title>Google FAQ</title>
-</head>
-
-<body>
-    <div id="container-faq">
-        <section class="faq">
-        
-        </section>
-
-    </div>
-</body>
-
-</html> -->
+    <body>
+        <div class="container-faq"> 
+            <?php
+            foreach ($faqs as $faq => $testo) {
+                foreach ($testo as $dati => $paragrafo) {
+                    if (is_array($paragrafo) === false) {
+                    ?> <section class="faq">
+                        <div class="titolo">
+                            <h1><?php echo $testo['Titolo']; ?></h1>
+                        </div><?php
+                    } else {
+                        ?>
+                        <div class="testo">
+                            <div class="paragrafo">
+                                <p><?php echo implode($paragrafo) ?></p>
+                            </div>
+                        </div><?php
+                    } ?>
+                    </section> <?php
+                }
+            }
+            ?>
+        </div>
+    </body>
+</html>
